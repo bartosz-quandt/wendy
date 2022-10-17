@@ -30,7 +30,11 @@ export default function App() {
             <NativeBaseProvider>
                 <NavigationContainer>
                     <Stack.Navigator initialRouteName="Home">
-                        <Stack.Screen name="Home" component={CityList} options={{title: 'Choose your city'}} />
+                        <Stack.Screen
+                            name="Home"
+                            component={CityList}
+                            options={{ title: 'Choose your city' }}
+                        />
                         <Stack.Screen
                             name="Details"
                             component={CityDetails}

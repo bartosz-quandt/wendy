@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import cityReducer from '../features/city/citySlice'
+import cityReducer from '../features/city/citySlice';
 
 export const store = configureStore({
   reducer: {
@@ -9,6 +9,7 @@ export const store = configureStore({
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
+export type AppStore = typeof store;
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,

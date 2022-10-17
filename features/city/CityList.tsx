@@ -1,10 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import {
-    Center, Input,
+    Center,
+    Input,
     Pressable,
     ScrollView,
     Text,
-    VStack
+    VStack,
 } from 'native-base';
 import React, { useEffect, useState } from 'react';
 import { NavigationProps } from '../../navigation/navigationProps';
@@ -49,7 +50,9 @@ const CityList: React.FC = () => {
                             minW="300"
                             alignItems="center"
                         >
-                            <Text>{city.name}</Text>
+                            <Text accessibilityLabel="city-list-name">
+                                {city.name}
+                            </Text>
                         </Pressable>
                     ))}
                 </VStack>

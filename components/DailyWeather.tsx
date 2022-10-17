@@ -1,11 +1,4 @@
-import {
-    AspectRatio,
-    Box,
-    Center,
-    Heading,
-    Image,
-    Stack,
-} from 'native-base';
+import { AspectRatio, Box, Center, Heading, Image, Stack } from 'native-base';
 import React from 'react';
 import { DateTime } from 'luxon';
 import { ColorType } from 'native-base/lib/typescript/components/types';
@@ -61,10 +54,12 @@ const DailyWeather: React.FC<{
                         }}
                         px="3"
                         py="1.5"
+                        accessibilityLabel="daily-weather-day"
                     >
                         {day && DateTime.fromISO(day).toFormat('cccc d LLLL y')}
                     </Center>
                     <AspectRatio
+                        accessibilityLabel="daily-weather-image"
                         w="100%"
                         ratio={16 / 4}
                         backgroundColor={randomColor()}
@@ -86,10 +81,18 @@ const DailyWeather: React.FC<{
                         flexDirection="row"
                         justifyContent="space-between"
                     >
-                        <Heading size="xs" ml="-1">
+                        <Heading
+                            size="xs"
+                            ml="-1"
+                            accessibilityLabel="daily-weather-min-temperature"
+                        >
                             Min {minTemperature}&deg;C
                         </Heading>
-                        <Heading size="xs" ml="-1">
+                        <Heading
+                            size="xs"
+                            ml="-1"
+                            accessibilityLabel="daily-weather-max-temperature"
+                        >
                             Max {maxTemperature}&deg;C
                         </Heading>
                     </Stack>
